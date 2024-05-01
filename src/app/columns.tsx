@@ -1,9 +1,9 @@
 "use client"
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown } from "lucide-react"
-import Image from "next/image"
+import { ArrowUpDown, Video } from "lucide-react"
 import { categories } from "@/lib/data"
 import "/node_modules/flag-icons/css/flag-icons.min.css"
+import Link from "next/link"
 
 export type Run = {
   id: string
@@ -11,7 +11,7 @@ export type Run = {
   name: string
   igt: string
   rta: string
-  status: "Pending" | "Verified" | "Rejected"
+  video: string
   date: Date
   category: string
 }
@@ -133,5 +133,21 @@ export const columns: ColumnDef<Run>[] = [
       return value.includes(row.getValue(id))
     },
   },
-  // dodać actions z wideo i src?
+  {
+    accessorKey: "video",
+    header: "",
+    cell: ({ row }) => {
+      const video: string = row.getValue('video')
+
+      if (!video) {
+        return null
+      }
+
+      return (
+        <Link href={`https://www.youtube.com/watch?v=${video}`} target="_blank" className='relative w-8 h-8 shrink-0'>
+          <Video className="h-6 w-6" />
+        </Link>
+      )
+    },
+  },
 ]
