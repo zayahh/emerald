@@ -133,4 +133,5 @@ export const columns: ColumnDef<Run>[] = [
       return value.includes(row.getValue(id))
     },
   },
+  // dodać actions z wideo i src?
 ]
