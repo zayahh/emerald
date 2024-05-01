@@ -37,7 +37,7 @@ export const columns: ColumnDef<Run>[] = [
     cell: ({ row }) => {
       const name: string = row.getValue('name')
 
-      return (<p className='w-24 text-ellipsis'>
+      return (<p className='w-24 text-ellipsis whitespace-nowrap'>
         {name}
       </p>)
     },

@@ -43,7 +43,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
 
-import { categories, days } from "@/lib/data"
+import { categories } from "@/lib/data"
 
 export function DataTable<TData, TValue>({
   columns,
