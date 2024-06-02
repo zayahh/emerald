@@ -143,8 +143,12 @@ export const columns: ColumnDef<Run>[] = [
         return null
       }
 
+      const videoLink = (video.length === 11)
+        ? `https://www.youtube.com/watch?v=${video}`
+        : `https://www.twitch.tv/videos/${video}`;
+
       return (
-        <Link href={`https://www.youtube.com/watch?v=${video}`} target="_blank" className='relative w-8 h-8 shrink-0'>
+        <Link href={videoLink} target="_blank" className='relative w-8 h-8 shrink-0'>
           <Video className="h-6 w-6" />
         </Link>
       )

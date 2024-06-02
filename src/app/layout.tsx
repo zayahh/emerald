@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "",
+  title: "Emerald",
+  description: "Leaderboard for different sub-categories of Minecraft 1.15 speedrunning.",
 };
 
 export default function RootLayout({
@@ -23,7 +20,7 @@ export default function RootLayout({
         <body className="min-h-screen">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >

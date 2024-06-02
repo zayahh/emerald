@@ -16,7 +16,7 @@ export default async function Leaderboard() {
     const data = await getRuns()
 
     return (
-        <div className='p-2 mx-auto max-w-[1280px] min-h-[calc(100vh-48px)]'>
+        <div className='p-2 mx-auto max-w-[1380px] min-h-[calc(100vh-48px)]'>
             <DataTable columns={columns} data={data} />
         </div>
     )
