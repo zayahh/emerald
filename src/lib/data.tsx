@@ -26,7 +26,15 @@ export const categories = [
     {
       value: "Mesa",
       label: "Mesa",
-    }
+    },
+    {
+      value: "Looting",
+      label: "Looting",
+    },
+    {
+      value: "Tower",
+      label: "Tower",
+    },
 ]
 
 export const days = [
