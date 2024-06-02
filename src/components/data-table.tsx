@@ -51,7 +51,7 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([{id: "igt", desc: false}])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
+    [{ id: "category", value: ["Classic"] }] // Set initial filter state here
   )
 
   const table = useReactTable({
@@ -70,6 +70,7 @@ export function DataTable<TData, TValue>({
       columnFilters,
     },
     initialState: {
+      columnFilters: [{ id: "category", value: ["Classic"] }], // Initialize column filter state here
       columnVisibility: {
         category: false,
       },
