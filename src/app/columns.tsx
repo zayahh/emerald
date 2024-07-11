@@ -16,32 +16,33 @@ export type Run = {
   category: string
 }
 
+interface props {
+  row: { original: { name: string; flag: string } };
+}
+
 export const columns: ColumnDef<Run>[] = [
   {
-    accessorKey: "flag",
-    header: "",
-    cell: ({ row }) => {
-      const flagId = row.getValue('flag')
-      const flagSpan = flagId
-        ? <span className={`fi fi-${flagId}`}></span>
-        : <span className="fi fi-xx"></span>
-
-      return (<div className='relative w-6 h-6'>
-          {flagSpan}
-      </div>)
-    },
+    header: "#",
+    id: "id",
+    cell: ({ row, table }) => (
+        <div className="w-[0px]">{((table.getSortedRowModel()?.flatRows?.findIndex((flatRow) => flatRow.id === row.id) || 0) + 1) as React.ReactNode}</div>
+    ),
   },
   {
     accessorKey: "name",
     header: "Name",
-    cell: ({ row }) => {
-      const name: string = row.getValue('name')
+    cell: ({ row }: props) => {
+      const name: string = row.original.name
+      const flagId: string = row.original.flag
+      const flagSpan = flagId
+        ? <span className={`fi fi-${flagId}`}></span>
+        : <span className="fi fi-xx"></span>
 
-      return (<p className='w-24 text-ellipsis whitespace-nowrap'>
-        {name}
-      </p>)
+      return (<div className='w-24 flex items-center gap-2'>
+        <div className="w-6 h-5">{flagSpan}</div>
+        <p className="text-ellipsis whitespace-nowrap">{name}</p>
+      </div>)
     },
-    size: 50,
   },
   {
     accessorKey: "igt",

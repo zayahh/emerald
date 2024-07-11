@@ -100,7 +100,8 @@ export function DataTable<TData, TValue>({
               options={categories}
             />
           )}
-        </div>
+                  </div>
+        
         <ThemeToggle />
       </div>
 
