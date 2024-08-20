@@ -1448,6 +1448,16 @@ export const data = [
       category: 'Igloo'
     },
     {
+        id: 'v7adz9poyupj2q2qa2w9cyle',
+        flag: 'cn',
+        name: 'Mo_An',
+        rta: '1276',
+        igt: '1183',
+        date: '2024-08-09',
+        video: '_i8VEinyZRk',
+        category: 'Classic'
+      },
+    {
       id: 'j69n50635wcrc4uq2mvpv71p',
       flag: 'us',
       name: 'Saturn125',
@@ -1457,6 +1467,16 @@ export const data = [
       video: 'VPzjWEClSms',
       category: 'Igloo'
     },
+    {
+        id: 'h84wo39z16450v5lkg3l3dtp',
+        flag: 'us',
+        name: 'Saturn125',
+        rta: '1244',
+        igt: '1232',
+        date: '2024-08-12',
+        video: '6H3R2VvPNWE',
+        category: 'Clay'
+      },
     {
       id: 'akhpqzd1qacpheenwzpztvey',
       flag: 'us',

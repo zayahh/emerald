@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <>
-      <div className="flex justify-between items-center py-4 space-x-2">
+      <div className="flex justify-between items-center p-4 space-x-2 shadow mb-2 rounded-md bg-foreground text-textPrimary">
         <div className="flex items-center space-x-2">
           <Link href='/' className='relative w-12 h-12 shrink-0'>
             <Image fill src='https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png/revision/latest?cb=20191229174220' alt='Emerald' sizes='100vw' />
@@ -105,7 +105,7 @@ export function DataTable<TData, TValue>({
         <ThemeToggle />
       </div>
 
-      <div className="rounded-md overflow-hidden">
+      <div className="rounded-md overflow-hidden shadow bg-foreground text-textPrimary p-2">
         <Table className="w-full sm:text-lg text-sm">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
