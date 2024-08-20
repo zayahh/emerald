@@ -79,65 +79,68 @@ export function DataTableFacetedFilter<TData, TValue>({
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0" align="start">
-        <Command>
-          <CommandInput placeholder={title} />
-          <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup>
-              {options.map((option) => {
-                const isSelected = selectedValues.has(option.value)
-                return (
-                  <CommandItem
-                    key={option.value}
-                    onSelect={() => {
-                      if (isSelected) {
-                        selectedValues.delete(option.value)
-                      } else {
-                        selectedValues.add(option.value)
-                      }
-                      const filterValues = Array.from(selectedValues)
-                      column?.setFilterValue(
-                        filterValues.length ? filterValues : undefined
-                      )
-                    }}
-                  >
-                    <div
-                      className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
-                        isSelected
-                          ? "bg-primary text-primary-foreground"
-                          : "opacity-50 [&_svg]:invisible"
-                      )}
-                    >
-                      <CheckIcon className={cn("h-4 w-4")} />
-                    </div>
-                    <span>{option.label}</span>
-                    {facets?.get(option.value) && (
-                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
-                        {facets.get(option.value)}
-                      </span>
-                    )}
-                  </CommandItem>
+      <PopoverContent className="w-[200px] p-0 bg-card text-card-foreground" align="start">
+  <Command>
+    <CommandInput className="text-primary-foreground" placeholder={title} />
+    <CommandList>
+      <CommandEmpty className="text-muted-foreground">No results found.</CommandEmpty>
+      <CommandGroup>
+        {options.map((option) => {
+          const isSelected = selectedValues.has(option.value)
+          return (
+            <CommandItem
+              key={option.value}
+              onSelect={() => {
+                if (isSelected) {
+                  selectedValues.delete(option.value)
+                } else {
+                  selectedValues.add(option.value)
+                }
+                const filterValues = Array.from(selectedValues)
+                column?.setFilterValue(
+                  filterValues.length ? filterValues : undefined
                 )
-              })}
-            </CommandGroup>
-            {selectedValues.size > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={() => column?.setFilterValue(undefined)}
-                    className="justify-center text-center"
-                  >
-                    Clear filters
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )}
-          </CommandList>
-        </Command>
-      </PopoverContent>
+              }}
+              className={`flex items-center justify-between p-2 rounded-md text-primary-foreground'
+              }`}
+            >
+              <div
+                className={cn(
+                  "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                  isSelected
+                    ? "bg-primary"
+                    : "opacity-50 [&_svg]:invisible"
+                )}
+              >
+                <CheckIcon className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <span className={`text-accent-foreground ${isSelected ? 'font-semibold' : 'font-normal'}`}>{option.label}</span>
+              {facets?.get(option.value) && (
+                <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs text-muted-foreground">
+                  {facets.get(option.value)}
+                </span>
+              )}
+            </CommandItem>
+          )
+        })}
+      </CommandGroup>
+      {selectedValues.size > 0 && (
+        <>
+          <CommandSeparator />
+          <CommandGroup>
+            <CommandItem
+              onSelect={() => column?.setFilterValue(undefined)}
+              className="justify-center text-center font-semibold text-primary-foreground hover:text-accent-foreground"
+            >
+              Clear filters
+            </CommandItem>
+          </CommandGroup>
+        </>
+      )}
+    </CommandList>
+  </Command>
+</PopoverContent>
+
     </Popover>
   )
 }
