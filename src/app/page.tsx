@@ -3,7 +3,7 @@ import { DataTable } from '@/components/data-table'
 
 async function getRuns(): Promise<Run[]> {
     const res = await fetch(
-        'https://polskagura-api.vercel.app/api/data/misc',
+        'https://igloo.run//api/data',
         { cache: 'no-store' }
     )
 
