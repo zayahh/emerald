@@ -30,6 +30,16 @@ export const data = [
       category: 'Classic',
     },
     {
+      id: 'F6H4bCdxSG',
+      flag: 'br',
+      name: 'whatevermarco',
+      rta: '1356',
+      igt: '1356',
+      date: '2024-06-06',
+      video: '',
+      category: 'Chopping',
+    },
+    {
       id: '64ec7fb26f2df58a2c31710e',
       flag: 'gb',
       name: 'Ontricus',
@@ -1371,9 +1381,9 @@ export const data = [
       id: 'aFm3eNdPPYuNO5Ti',
       flag: 'fr',
       name: 'Max',
-      rta: '1430',
-      igt: '1430',
-      date: '2023-03-13',
+      rta: '1165',
+      igt: '1165',
+      date: '2024-05-12',
       video: '',
       category: 'Chopping',
     },
@@ -1468,6 +1478,16 @@ export const data = [
       category: 'Igloo'
     },
     {
+      id: '9VUHxLQWkD',
+      flag: 'us',
+      name: 'Saturn125',
+      rta: '3035',
+      igt: '2969',
+      date: '2024-06-06',
+      video: 'xNeKA-3Wodg',
+      category: 'Bamboo'
+    },
+    {
         id: 'h84wo39z16450v5lkg3l3dtp',
         flag: 'us',
         name: 'Saturn125',
@@ -1506,6 +1526,16 @@ export const data = [
       date: '2023-08-30',
       video: '',
       category: 'Igloo'
+    },
+    {
+      id: 'UigvAfhivk',
+      flag: 'us',
+      name: 'Purpul',
+      rta: '2305',
+      igt: '2305',
+      date: '2022-02-26',
+      video: '',
+      category: 'Looting'
     },
     {
       id: 'i3tQoUDq',
@@ -1786,6 +1816,16 @@ export const data = [
       date: '2024-05-16',
       video: '3-DmsRrIAC0',
       category: 'Igloo'
+    },
+    {
+      id: 'LWjm5ugMwe',
+      flag: 'ca',
+      name: 'Leah',
+      rta: '1198',
+      igt: '1198',
+      date: '2024-09-24',
+      video: '',
+      category: 'Classic',
     },
   ]
   
